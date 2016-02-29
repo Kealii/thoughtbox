@@ -14,10 +14,12 @@
   <% end %>
 
   <% if current_user %>
-    <%= current_user.email %> <br>
-    <%= link_to 'Logout', '/logout', class: 'btn btn-danger' %>
+    <h4 class="pull-right">Email: <%= current_user.email %></h4>
+    <br>
+    <br>
+    <%= link_to 'Logout', '/logout', class: 'btn btn-danger pull-right' %>
   <% else %>
-    <%= link_to 'Home', '/', class: 'btn btn-success' %>
+    <%= link_to 'Home', '/', class: 'btn btn-success pull-right' %>
   <% end %>
 
 <%= yield %>
