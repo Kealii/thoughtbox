@@ -5,14 +5,20 @@
   <%= f.text_field :url %>
   <%= f.submit 'Submit', class: 'btn btn-primary'%>
 <% end %>
-  <br>
+<br>
 
 <div class="well">
-  <h3>Links</h3>
+  <h3 class="text-center">Links</h3>
   <% current_user.links.each do |link| %>
   <ul>
     <li>
-      <%= link.url %>
+      <% if link.read %>
+        <h5><s><%= link.url %></s></h5>
+        <%= link_to 'Mark as Unread', edit_link_path(link), class: 'btn btn-success' %>
+      <% else %>
+        <h5><%= link.url %></h5>
+        <%= link_to 'Mark as Read', edit_link_path(link), class: 'btn btn-danger' %>
+      <% end %>
     </li>
   </ul>
 <% end %>
