@@ -1,17 +1,19 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.feature "user signs up" do
+RSpec.feature 'user signs up' do
 
-  scenario "with correct credentials" do
-    visit root_path
-    click_link("Sign Up")
+  context 'with correct credentials' do
+    it 'redirect to links path' do
+      visit root_path
+      click_link('Sign Up')
 
-    fill_in "user_email", with: "test@example.com"
-    fill_in "user_password", with: "password"
-    fill_in "user_password_confirmation", with: "password"
-    click_button "Submit"
+      fill_in 'user_email', with: 'test@example.com'
+      fill_in 'user_password', with: 'password'
+      fill_in 'user_password_confirmation', with: 'password'
+      click_button 'Submit'
 
-    expect(current_path).to eq(links_path)
-    expect(page).to have_content("Signed Up")
+      expect(current_path).to eq(links_path)
+      expect(page).to have_content('Signed Up')
+    end
   end
 end

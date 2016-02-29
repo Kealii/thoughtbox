@@ -12,6 +12,13 @@
   <%= content_tag :div, msg, class: name %>
 <% end -%>
 
+<% if current_user %>
+  <%= current_user.email %> <br>
+  <%= link_to 'Logout', '/logout' %>
+<% else %>
+  <%= link_to 'Home', '/' %>
+<% end %>
+
 <%= yield %>
 
 </body>
