@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bcrypt', '~> 3.1.7'
+gem 'bootstrap-sass'
+gem 'bootstrap_form'
 
 group :development, :test do
   gem 'byebug'

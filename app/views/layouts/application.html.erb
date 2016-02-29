@@ -7,19 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container well">
 
-<% flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, class: name %>
-<% end -%>
+  <% if flash[:notice] %>
+    <div class="alert alert-success text-center"><%= flash[:notice] %></div>
+  <% end %>
 
-<% if current_user %>
-  <%= current_user.email %> <br>
-  <%= link_to 'Logout', '/logout' %>
-<% else %>
-  <%= link_to 'Home', '/' %>
-<% end %>
+  <% if current_user %>
+    <%= current_user.email %> <br>
+    <%= link_to 'Logout', '/logout', class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'Home', '/', class: 'btn btn-success' %>
+  <% end %>
 
 <%= yield %>
+</div>
 
 </body>
 </html>
