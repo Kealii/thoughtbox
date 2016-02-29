@@ -11,7 +11,9 @@
   <h3>Links</h3>
   <% current_user.links.each do |link| %>
   <ul>
-    <li><%= link.url %></li>
+    <li>
+      <%= link.url %>
+    </li>
   </ul>
 <% end %>
 </div>
